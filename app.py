@@ -33,7 +33,7 @@ def detect(image):
     # If you do, make sure that you change the variables name at appropriate places in the code below
     # Don't blame me if you run into errors while doing that :P
     
-    faces = face_cascade.detectMultiScale(image=image, scaleFactor=1.3, minNeighbors=5)
+    faces = face_cascade.detectMultiScale(image=image, scaleFactor=1, minNeighbors=5)
     # The face_cascade classifier returns coordinates of the area in which the face might be located in the image
     # These coordinates are (x,y,w,h)
     # We will be looking for eyes and smile within this area instead of looking for them in the entire image
