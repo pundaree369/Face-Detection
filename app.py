@@ -10,7 +10,7 @@ import os
 try:
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')
-    smile_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_smile.xml')
+    # smile_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_smile.xml')
 except Exception:
     st.write("Error loading cascade classifiers")
 
@@ -54,15 +54,15 @@ def detect(image):
         eyes = eye_cascade.detectMultiScale(roi)
         
         # Detecting smiles in the face(s) detected
-        smile = smile_cascade.detectMultiScale(roi, minNeighbors = 25)
+       # smile = smile_cascade.detectMultiScale(roi, minNeighbors = 25)
         
         # Drawing rectangle around eyes
         for (ex,ey,ew,eh) in eyes:
             cv2.rectangle(roi, (ex, ey), (ex+ew, ey+eh), (0,255,0), 2)
             
         # Drawing rectangle around smile
-        for (sx,sy,sw,sh) in smile:
-            cv2.rectangle(roi, (sx, sy), (sx+sw, sy+sh), (0,0,255), 2)
+        #for (sx,sy,sw,sh) in smile:
+         #   cv2.rectangle(roi, (sx, sy), (sx+sw, sy+sh), (0,0,255), 2)
 
     # Returning the image with bounding boxes drawn on it (in case of detected objects), and faces array
     return image, faces
