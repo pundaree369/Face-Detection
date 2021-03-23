@@ -51,7 +51,7 @@ def detect(image):
         roi = image[y:y+h, x:x+w]
         
         # Detecting eyes in the face(s) detected
-        eyes = eye_cascade.detectMultiScale(roi)
+        eyes = eye_cascade.detectMultiScale(roi, minNeighbors =2)
         
         # Detecting smiles in the face(s) detected
        # smile = smile_cascade.detectMultiScale(roi, minNeighbors = 25)
